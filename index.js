@@ -27,9 +27,39 @@ $(document).ready(function () {
         $.ajax({
             url: `https://swapi.dev/api/people/${personaId}`,
             type: 'GET',
-        }).done(function (responde) {
-            persona = responde[personaId];
-            var template = ``;
+        }).done(function (response) {
+            persona = response[personaId];
+            var template = `<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">John Doe</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+    
+                    <div class="row modal-body fondo">
+                        <div class="col-6">
+                            <img src="https://starwars-visualguide.com/assets/img/characters/${personaId}.jpg" class="rounded-circle"
+                                alt="Cinque Terre" width="200px">
+                        </div>
+                        <div class="info col-6">
+                            <p><i class="bi bi-cake2"></i> Birth Year: 24BBY</p>
+                            <p>Species: Unknown</p>
+                            <p><i class="bi bi-arrows-vertical"></i> Height: 183cm</p>
+                            <p>Mass: 84kg</p>
+                            <p>Gender: Male</p>
+                            <p>Hair Color: Black</p>
+                            <p>Skin Color: Light</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+    
+                    </div>
+                </div>
+            </div>
+        </div>`;
+            $('#modal').append(template);
+
         })
     })
 
