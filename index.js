@@ -28,8 +28,8 @@ $(document).ready(function () {
             url: `https://swapi.dev/api/people/${personaId}`,
             type: 'GET',
         }).done(function (responde) {
-            persona = responde.type[0];
-            var template = ``
+            persona = responde[personaId];
+            var template = ``;
         })
     })
 
