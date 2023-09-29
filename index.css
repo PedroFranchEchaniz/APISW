@@ -1,0 +1,20 @@
+.fill {
+    object-fit: cover;
+}
+
+.narrow {
+    width: 100px;
+    height: 150px;
+}
+
+.fondo {
+    background-image: url(https://static.wikia.nocookie.net/starwars/images/2/2c/Starfield.jpg);
+}
+
+.info {
+    color: aliceblue;
+}
+
+.bi-arrows-vertical {
+    color: aliceblue;
+}
