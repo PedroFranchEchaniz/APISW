@@ -14,12 +14,23 @@ $(document).ready(function () {
                 <h4 class="card-title">${personaje.name}</h4>
                 <p class="card-text">${personaje.birth_year}</p>
                 <p class="card-text">${personaje.species}</p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                <button  itemid="${id}" type="button" class="btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#exampleModal"><i class="bi bi-plus"></i></button>
             </div>
         </div>`;
             $('#lista-starwars').append(template);
         });
     });
+
+    $(document).on('click', '.btn', function () {
+        var personaId = $(this).attr('itemid');
+        $.ajax({
+            url: `https://swapi.dev/api/people/${personaId}`,
+            type: 'GET',
+        }).done(function (responde) {
+            persona = responde.type[0];
+            var template = ``
+        })
+    })
 
 });
